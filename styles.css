@@ -56,7 +56,7 @@ body {
 .sidebar {
     background-color: #4a7c59;
     color: white;
-    width: 250px;
+    width: 350px;
     padding: 20px;
     flex-shrink: 0;
 }
@@ -91,6 +91,12 @@ body {
     border-radius: 3px;
 }
 
+.sidebar li.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+    font-weight: bold;
+}
+
 /* Main Content */
 .main-content {
     background-color: white;
@@ -99,23 +105,26 @@ body {
 }
 
 .main-content img {
-    width: 100%;
-    max-width: 800px;
+    max-width: 500px;
     height: auto;
-    display: block;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    display:flex;
     margin-bottom: 15px;
 }
 
 .image-caption {
     font-size: 0.9em;
+    max-width: 500px;
     color: #666;
     margin-bottom: 20px;
     font-style: italic;
 }
 
 .text-area {
+    max-width: 500px;
     background-color: #e0e0e0;
-    padding: 20px;
+    padding: 30px;
     margin-top: 20px;
     border-radius: 5px;
 }
@@ -125,3 +134,32 @@ body {
     color: #333;
 }
 
+.important-notes {
+    padding: 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: top;
+    justify-content:space-between
+}
+
+.important-notes h3 {
+    padding-left: 30px;
+}
+.important-notes-list {
+    list-style:disc;
+    list-style-position:inside;
+    padding-top: 10px;
+    padding-left: 30px;
+    font-size: 1.2em;
+    max-width: 600px;
+    color: #333;
+}
+
+.important-notes p {
+    margin-right: 150px;
+    max-width: 600px;
+    padding-left: 30px;
+    margin-bottom: 20px;
+    font-size: 1.7em;
+}

@@ -22,28 +22,62 @@
         <aside class="sidebar">
             <h3>Restaurants</h3>
             <ul>
-                <li>Restaurant 1</li>
-                <li>Restaurant 2</li>
-                <li>Restaurant 3</li>
+                <li class="sidebar-item active" data-text="You can find an assortment of locally-sourced fresh fish at the majority of the restaurants in Taniti; the most popular is the Rock-A-Hula Luau Buffet.  Guranteed to be fresh and delicious.">Fresh Fish</li>
+                <li class="sidebar-item" data-text="For those looking for a little more variety might enjoy a Pan-Asian meal at one of three restaurants on the island; Sea Dragon Restaurant is the most popular. The flavors are unique and the prices are reasonable.">Pan-Asian</li>
+                <li class="sidebar-item" data-text="And for our American guests who wish to experience a taste of home, there are two American restaurants on the island: the Tiki Hut and the Beachcomber Restaurant, both with incredible views and a great atmosphere.">American</li>
             </ul>
             
             <h3>Bars</h3>
             <ul>
-                <li>Pub</li>
-                <li>Microbrewery</li>
+                <li class="sidebar-item" data-text="The several pubs offer a cozy atmosphere perfect for relaxing after a day of exploring. Enjoy a wide selection of local and international beers, classic cocktails, and light fare.">Pubs</li>
+                <li class="sidebar-item" data-text="The microbrewery showcases handcrafted beers made with local ingredients and traditional brewing techniques. Take a tour of the facility, sample unique brews, and enjoy pub-style food in a modern, industrial-chic setting.">Microbrewery</li>
             </ul>
+            <div class="text-area">
+                <p id="content-text">You can find an assortment of locally-sourced fresh fish at the majority of the restaurants in Taniti; the most popular is the Rock-A-Hula Luau Buffet.  Guranteed to be fresh and delicious.</p>
+            </div>
         </aside>
         
         <main class="main-content">
-            <img src="Rock-A-Hula-Luau-Buffet-02.jpg" alt="Luau food spread">
-            <div class="image-caption">
-                2025 Royal Star Hawaii, https://royalstarhawaii.com/oahu-activities/luaus
+            <div class="important-notes">
+                <div>
+                    <img src="Rock-A-Hula-Luau-Buffet-02.jpg" alt="Luau food spread">
+                    <div class="image-caption">
+                        2025 Royal Star Hawaii, https://royalstarhawaii.com/oahu-activities/luaus
+                    </div>
+                </div>
+                
+                <div>
+                    <p>Hungry or thirsty? We've got you covered! With a variety of restaurants and bars, you're sure to find something to suit your taste.</p>
+                    <h3>Important Notes:</h3>
+                    <ul class="important-notes-list">
+                        <li>The drinking age is 18 years old but is not strictly enforced.</li>
+                        <li>Last call for alcohol is 12:00am and will not resume service until 9:00am the next morning.</li>
+                        <li>Violent crime is rare in Taniti, but please drink responsibly as there have been reports of pickpocketing and other petty crimes.</li>
+                    </ul>
+                </div>
+
             </div>
-            <div class="text-area">
-                <p>Details about the restaurants and bars on the island.</p>
-            </div>
+            
         </main>
     </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebarItems = document.querySelectorAll('.sidebar-item');
+            const contentText = document.getElementById('content-text');
+            
+            sidebarItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    // Remove active class from all items
+                    sidebarItems.forEach(i => i.classList.remove('active'));
+                    // Add active class to clicked item
+                    this.classList.add('active');
+                    // Update text area content
+                    contentText.textContent = this.getAttribute('data-text');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
 

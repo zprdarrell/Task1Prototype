@@ -22,22 +22,56 @@
         <aside class="sidebar">
             <h2>Upcoming Events</h2>
             <ul>
-                <li>Event 1<br><small>Short description of event 1</small></li>
-                <li>Event 2<br><small>Short description of event 2</small></li>
-                <li>Event 3<br><small>Short description of event 3</small></li>
+                <li class="sidebar-item active" data-text="This event features traditional hula dancing performances at sunset, showcasing the rich cultural heritage of Taniti. Visitors can experience authentic Polynesian dance and music in a beautiful outdoor setting.">Friday<br><small>Polynesian Dance Festival</small></li>
+                <li class="sidebar-item" data-text="This event offers a unique cultural experience with live music, traditional crafts, and local cuisine. Join us for an evening of entertainment and celebration of Taniti's vibrant community.">Saturday<br><small>Food and Culture Night</small></li>
+                <li class="sidebar-item" data-text="This event is a celebration of the island's agricultural bounty. Local farmers and artisans showcase their products, offering fresh produce, handmade goods, and traditional island crafts.">Sunday<br><small>Farmers Market</small></li>
             </ul>
+            <div class="text-area">
+                <p id="content-text">This event features traditional hula dancing performances at sunset, showcasing the rich cultural heritage of Taniti. Visitors can experience authentic Polynesian dance and music in a beautiful outdoor setting.</p>
+            </div>
         </aside>
         
         <main class="main-content">
-            <img src="maui-hula-02.png" alt="Hula dancers at sunset">
-            <div class="image-caption">
-                David Olsen, Alamy Stock Photo, Dancers Perform at Sunset, National Geographic, https://www.nationalgeographic.com/travel/article/things-to-do-hula-dancing-performances-festival
+            <div class="important-notes">
+                <div>
+                    <img src="maui-hula-02.png" alt="Hula dancers at sunset">
+                    <div class="image-caption">
+                        David Olsen, Alamy Stock Photo, Dancers Perform at Sunset, National Geographic, https://www.nationalgeographic.com/travel/article/things-to-do-hula-dancing-performances-festival
+                    </div>
+                </div>
+                
+                <div>
+                    <p>Welcome to Taniti! We're so glad you're here. Use the top navigation to explore the island and plan your trip.</p>
+                    <h3>Important Notes:</h3>
+                    <ul class="important-notes-list">
+                        <li>Taniti enjoys a large number of national holidays, and many tourist attractions and restaurants will be closed on holidays, so visitors should plan accordingly.                        </li>
+                        <li>Power outlets are 120 volts (the same as in the United States). </li>
+                        <li>There is one hospital and several clinics. The hospital has many multilingual employees.</li>
+                    </ul>
+                </div>
+
             </div>
-            <div class="text-area">
-                <p>More detailed description of selected event and image above.</p>
-            </div>
+            
         </main>
     </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebarItems = document.querySelectorAll('.sidebar-item');
+            const contentText = document.getElementById('content-text');
+            
+            sidebarItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    // Remove active class from all items
+                    sidebarItems.forEach(i => i.classList.remove('active'));
+                    // Add active class to clicked item
+                    this.classList.add('active');
+                    // Update text area content
+                    contentText.textContent = this.getAttribute('data-text');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
 

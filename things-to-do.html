@@ -22,35 +22,64 @@
         <aside class="sidebar">
             <h3>Entertainment</h3>
             <ul>
-                <li>Entertainment 1</li>
-                <li>Entertainment 2</li>
+                <li class="sidebar-item active" data-text="Reserve a charter boat for a day of fishing and exploring the beautiful waters of Taniti. Our experienced captains will take you to the best fishing spots and show you the island from a unique perspective.">Charter Boat Fishing and Tours</li>
+                <li class="sidebar-item" data-text="Experience the vibrant nightlife of Taniti with live music performances, traditional dance shows, and cultural presentations. Our entertainment venues feature local and international artists, creating unforgettable evenings filled with music, dance, and celebration of island culture.">Nightlife</li>
             </ul>
             
             <h3>Sights</h3>
             <ul>
-                <li>Sights 1</li>
-                <li>Sights 2</li>
-                <li>Sights 3</li>
+                <li class="sidebar-item" data-text="Visit the historic Taniti Cultural Center, where you can explore ancient artifacts, learn about the island's rich history, and witness traditional crafts being made. The center features interactive exhibits, guided tours, and cultural demonstrations that bring Taniti's heritage to life.">Art Gallery and History Museum</li>
+                <li class="sidebar-item" data-text="Discover the breathtaking Taniti Volcano and surrounding national park. Take a guided tour to see volcanic formations, lush rainforests, and stunning panoramic views. The park offers hiking trails for all skill levels, with opportunities to see unique wildlife and native plants.">Volcano View</li>
+                <li class="sidebar-item" data-text="Take a guided tour through the lush rainforests of Taniti. Our experienced guides will show you the best spots to see the island's unique flora and fauna.">Jungle Tours</li>
             </ul>
             
             <h3>Beaches</h3>
             <ul>
-                <li>Beach 1</li>
-                <li>Beach 2</li>
-                <li>Beach 3</li>
+                <li class="sidebar-item" data-text="This pristine white sand beach is perfect for swimming, sunbathing, and water sports. With calm, clear waters and excellent facilities, Beach 1 is ideal for families. Enjoy beachside dining, water equipment rentals, and lifeguard services during peak season.">Yellow Leaf Bay</li>
             </ul>
+            <div class="text-area">
+                <p id="content-text">Reserve a charter boat for a day of fishing and exploring the beautiful waters of Taniti. Our experienced captains will take you to the best fishing spots and show you the island from a unique perspective.</p>
+            </div>
         </aside>
         
         <main class="main-content">
-            <img src="5-Whale-Watching-Humpback-Breaching-Stellwagen_reduced.jpg" alt="Whale breaching">
-            <div class="image-caption">
-                A humpback whale breaches in front of the Voyager III whale watch vessel cruising through Stellwagen Bank National Marine Sanctuary. Photo: WCNE-Whale Center of New England, https://www.ifaw.org/international/journal/sustainable-whale-watching
-            </div>
-            <div class="text-area">
-                <p>More detailed description of image above from selected category.</p>
+            <div class="important-notes">
+                <div>
+                    <img src="5-Whale-Watching-Humpback-Breaching-Stellwagen_reduced.jpg" alt="Whale breaching">
+                    <div class="image-caption">
+                        A humpback whale breaches in front of the Voyager III whale watch vessel cruising through Stellwagen Bank National Marine Sanctuary. Photo: WCNE-Whale Center of New England, https://www.ifaw.org/international/journal/sustainable-whale-watching
+                    </div>
+                </div>
+                
+                <div>
+                    <p>You'll never be bored in Taniti! With a variety of activities and attractions, you're sure to find something to suit your interests.</p>
+                    <h3>Important Notes:</h3>
+                    <ul class="important-notes-list">
+                        <li>Taniti uses the U.S. dollar as its currency, but many businesses will also accept euros and yen. Several banks facilitate currency exchange, and many businesses accept major credit cards. </li>
+                        <li>Many younger Tanitians speak fluent English. Very little English is spoken in rural areas, especially by the older residents.</li>
+                    </ul>
+                </div>
             </div>
         </main>
     </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebarItems = document.querySelectorAll('.sidebar-item');
+            const contentText = document.getElementById('content-text');
+            
+            sidebarItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    // Remove active class from all items
+                    sidebarItems.forEach(i => i.classList.remove('active'));
+                    // Add active class to clicked item
+                    this.classList.add('active');
+                    // Update text area content
+                    contentText.textContent = this.getAttribute('data-text');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
 

@@ -22,32 +22,62 @@
         <aside class="sidebar">
             <h3>Air Service</h3>
             <ul>
-                <li>Flight Information</li>
+                <li class="sidebar-item active" data-text="Taniti is served by a small airport that can accommodate small jets and propeller planes. Taniti is in the process of expanding the airport so larger jets will be able to land on the island within the next few years.">Flight Information</li>
             </ul>
             
             <h3>Accommodations</h3>
             <ul>
-                <li>Beach 1</li>
-                <li>Beach 2</li>
-                <li>Beach 3</li>
+                <li class="sidebar-item" data-text="Taniti is home to one large 4-star luxury resort located on the north shore of Taniti. The resort offers a variety of accommodations, including rooms, suites, and villas. There are also a variety of smaller hotels available for those who prefer a more intimate setting.">Hotels</li>
+                <li class="sidebar-item" data-text="There is an inexpensive hostel that offers a comfortable place to stay for those on a budget.">Hostels</li>
             </ul>
             
             <h3>Cruise</h3>
             <ul>
-                <li>Cruise Information</li>
+                <li class="sidebar-item" data-text="Cruise Information: One cruise ship, The Pacific Pearl, includes Taniti as a stop on their Pacific itineraries. Dropping anchors at the dock in Yellow Leaf Bay, the island's deep-water harbor can accommodate the small cruise ship. and passengers can enjoy day excursions to explore the island's attractions. Cruise ship visitors typically have 8-12 hours to experience Taniti's beaches, dining, shopping, and cultural sites.">Cruise Information</li>
             </ul>
+            <div class="text-area">
+                <p id="content-text">Taniti is served by a small airport that can accommodate small jets and propeller planes. Taniti is in the process of expanding the airport so larger jets will be able to land on the island within the next few years.</p>
+            </div>
         </aside>
         
         <main class="main-content">
-            <img src="cruise.jpg" alt="Cruise ship">
-            <div class="image-caption">
-                2023 Larry D. Moore. Licensed under CC BY 4.0., Voyager of the Seas, Wikipedia, https://en.wikipedia.org/wiki/Voyager-class_cruise_ship#/media/File:Voyager_of_the_Seas_Costa_Maya_2023.jpg
-            </div>
-            <div class="text-area">
-                <p>More information about how to get to the island and where to stay.</p>
+            <div class="important-notes">
+                <div>
+                    <img src="cruise.jpg" alt="Cruise ship">
+                    <div class="image-caption">
+                        2023 Larry D. Moore. Licensed under CC BY 4.0., Voyager of the Seas, Wikipedia, https://en.wikipedia.org/wiki/Voyager-class_cruise_ship#/media/File:Voyager_of_the_Seas_Costa_Maya_2023.jpg
+                    </div>
+                </div>
+                
+                <div>
+                    <p>Here you'll find all the information you need to get started planning your trip to Taniti. From flight information to accommodations and cruises, </p>
+                    <h3>Important Notes:</h3>
+                    <ul class="important-notes-list">
+                        <li>The Pacific Pearl docks in Yellow Leaf Bay, and passengers can enjoy day excursions to explore the island's attractions.</li>
+                        <li>All types of lodging are strictly regulated and regularly inspected by the Tanitian government.</li>
+                    </ul>
+                </div>
             </div>
         </main>
     </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebarItems = document.querySelectorAll('.sidebar-item');
+            const contentText = document.getElementById('content-text');
+            
+            sidebarItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    // Remove active class from all items
+                    sidebarItems.forEach(i => i.classList.remove('active'));
+                    // Add active class to clicked item
+                    this.classList.add('active');
+                    // Update text area content
+                    contentText.textContent = this.getAttribute('data-text');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
 
